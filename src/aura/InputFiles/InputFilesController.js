@@ -10,7 +10,7 @@
             var binaryString = readerEvt.target.result;
             var filesObj = new Object(); 
             
-            filesObj.lFileContent = btoa(binaryString);
+            filesObj.lFileContent = btoa(binaryString);//Codifica na base 64
             filesObj.lFileName = inputCmp[i].name;
             
             files.push(filesObj);
