@@ -1,0 +1,17 @@
+<aura:component controller="InputFilesController" implements="force:appHostable">
+    <aura:attribute name="files" type="List" />
+    <aura:attribute name="spinner" type="Boolean" default="false"/>
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+    
+    <div class="slds-box" style="background-color:white;">
+        <lightning:button class="slds-align_absolute-center" label="Salvar Arquivos" variant="brand" onclick="{!c.saveFiles}"/>
+        <lightning:input aura:id="inputFiles" type="file" label="Upload Files" multiple="true" onchange="{!c.uploadFiles}"/>         
+        
+        <aura:iteration items="{!v.files}" var="file">
+            <p>{!file.lFileName}</p>
+        </aura:iteration>
+    </div>
+    <aura:if isTrue="{!v.spinner}">
+        <lightning:spinner alternativeText="Loading" size="medium" />
+    </aura:if>
+</aura:component>
