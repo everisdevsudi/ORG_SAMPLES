@@ -11,9 +11,9 @@ public class InputFilesController {
         List<ContentVersion> lLstContentVersion = new List<ContentVersion>();
         
         for(FileObj iFileObj : lLstFiles){
-            ContentVersion lContVersion = new ContentVersion();
+            ContentVersion lContVersion = new ContentVersion();//Objeto para Files lightning
             lContVersion.Title = iFileObj.lFileName;
-            lContVersion.VersionData = EncodingUtil.base64Decode(iFileObj.lFileContent);
+            lContVersion.VersionData = EncodingUtil.base64Decode(iFileObj.lFileContent);//converte para blob 
             lContVersion.PathOnClient = iFileObj.lFileName;
             lLstContentVersion.add(lContVersion);
         }        
