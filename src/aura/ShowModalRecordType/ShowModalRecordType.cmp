@@ -1,0 +1,54 @@
+<aura:component controller="ShowModalRecordTypeCrtl" implements="force:appHostable" >
+    
+    <aura:attribute name="chkListRtNames" type="List"/>
+    <aura:attribute name="showModal" type="Boolean" default="false"/>
+    <aura:attribute name="rtSelected" type="String" />
+    
+    
+    <lightning:notificationsLibrary aura:id="notifLib"/>
+     
+     <lightning:button class= "slds-align_absolute-center" label="Neutral" title="mostra" onclick="{! c.getListRTCrtl }">Clique aqui para mostrar a lista de Record Types do objeto </lightning:button>/>
+    
+    <aura:if isTrue="{!v.showModal}">
+    <div class="modal-glass slds-backdrop fadein slds-backdrop--open">
+    </div>
+    <div class="panel slds-modal slds-fade-in-open">
+        <div class="modal-container slds-modal__container">
+            <div class="modal-header slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" style="color: white;">
+                    <lightning:buttonIcon iconName="utility:close" variant="bare" class="btn-closeFigura slds-show_medium" size="large" alternativeText="Fechar" onclick="{! c.closeModal }"/>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Novo Cliente</h2>
+            </div>
+            <div class="modal-body scrollable slds-modal__content slds-p-around--medium" style="height: 15rem;">
+                <aura:if isTrue="{!v.showError}">
+                    <div style="text-align: center; margin-bottom: 1rem;">
+                        <span style="color: red;">Por favor, selecione um tipo de registro.</span>
+                    </div>
+                </aura:if>
+                <div class="selectRT">
+                    <span style="margin-right: 1em;">Selecione um tipo de registro</span>
+                </div>
+                <fieldset class="slds-form-element">
+                    <div class="slds-form-element__control">
+                        <aura:iteration items="{!v.chkListRtNames}" var="rt">
+                            <span class="slds-radio recordTypes">
+                                <input type="radio" id="{!rt.idRT}" checked="{!v.rtSelected == rt.idRT}" name="options" value="{!rt.idRT}" onclick="{!c.selectedRT}"/>
+                                <label class="slds-radio__label" for="{!rt.idRT}">
+                                    <span class="slds-radio_faux"></span>
+                                    <span class="slds-form-element__label">{!rt.name}</span>
+                                </label>
+                            </span>
+                        </aura:iteration>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="modal-footer slds-modal__footer">
+                <button class="slds-button slds-button_neutral" onclick="{!c.closeModal }">Cancelar</button>
+                <button class="slds-button slds-button_brand" onclick="{! c.newRecordAcc }">Avançar</button>
+            </div>
+        </div>
+    </div>
+    </aura:if>
+</aura:component>

@@ -1,0 +1,15 @@
+.THIS .selectRT{
+    width: 45%;
+    text-align: right;
+    margin-right: 0;
+}
+.THIS .recordTypes{
+    float: right;
+    text-align: left;
+    width: 65%;
+    padding-left: 4rem;
+    padding-bottom: 0.5rem;
+}
+.THIS .slds-button_icon-bare{
+    color:white;
+}
