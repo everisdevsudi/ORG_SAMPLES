@@ -1,0 +1,58 @@
+<aura:component implements="force:appHostable" controller="TablePaginationController">
+    <aura:attribute name="options" type="List" default="[10,15,25,50,100]"/>
+    <aura:attribute name="filter" type="Decimal" default="10"/>
+    <aura:attribute name="search" type="String"/>
+    <aura:attribute name="actualPage" type="Decimal" default="1"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="sortedBy" type="String"/>
+    <aura:attribute name="sortedDirection" type="String" default="asc" />
+    <aura:attribute name="pages" type="List"/>
+    <aura:attribute name="totalPages" type="Decimal"/>
+    <aura:attribute name="spinner" type="Boolean" />
+    
+    <aura:handler name="init" value="{! this }" action="{! c.doInit }"/>
+
+    <div class="slds-box" style="background-color:white;">
+        <div class="slds-grid">
+            <div class="slds-col">
+                <lightning:select class="width-select" name="quantidade de registros que devem ser mostrados" label="Show" value="{!v.filter}" onchange="{!c.updateTable}">
+                    <aura:iteration items="{!v.options}" var="option">
+                        <option label="{!option}" value="{!option}" />
+                    </aura:iteration>
+                </lightning:select>
+                <p class="slds-form-element__label">entries</p>
+            </div>
+            <div class="slds-col">
+                <lightning:input class="width-searchInput slds-float_right"
+                                 label="Search by Name"
+                                 type="search"
+                                 value="{!v.search}"
+                                 onchange="{! c.searchName }" onfocusout="{! c.cleanInput }"/>
+            </div>
+        </div>
+        
+        <lightning:datatable keyField="Id"
+                             data="{! v.data }"
+                             columns="{! v.columns }"
+                             hideCheckboxColumn="true"
+                             sortedBy="{!v.sortedBy}"
+                             sortedDirection="{!v.sortedDirection}"
+                             onsort="{!c.updateColumnSorting}"/>
+        
+        <div class="slds-scrollable" style="text-align:center;">
+            <lightning:button variant="Brand" label="First Page" title="First Page" onclick="{! c.goToFirstPage }" disabled="{! v.actualPage == 1 }"/>
+            
+            <aura:iteration items="{!v.pages}" var="page">
+                <lightning:button variant="{! v.actualPage == page ? 'Brand' : 'Neutral'}" label="{!page}" onclick="{! c.goToPage }"/>
+            </aura:iteration>
+            
+            <lightning:button variant="Brand" label="Last Page" title="Last Page" onclick="{! c.goToLastPage }" disabled="{! v.actualPage == v.totalPages }"/>
+        </div>
+    </div>
+    
+    <aura:if isTrue="{!v.spinner}">
+        <lightning:spinner alternativeText="Loading" />
+    </aura:if>
+    
+</aura:component>
