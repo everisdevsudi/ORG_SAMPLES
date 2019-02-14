@@ -11,7 +11,7 @@ global class BatchUpdateAccount implements Database.Batchable<sObject>, Database
     { return database.executeBatch(new BatchUpdateAccount(), 1); }
     
     global static String agendar()// Metodo criado para realizar o agendamento do batch para rodar de determinado tempo em tempo.
-    {
+    {   //Neste exemplo está agendando de 1 em 1 minuto de acordo com a linha 15 abaixo.
         Datetime lProxExec = system.now().addMinutes(1);
         String lCronStr = lProxExec.second() + ' ' + lProxExec.minute() + ' ' + lProxExec.hour() + ' ' + lProxExec.day() + ' ' + lProxExec.month() + ' ?';
         BatchUpdateAccount lBatch = new BatchUpdateAccount();
