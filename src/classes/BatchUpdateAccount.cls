@@ -1,5 +1,6 @@
 global class BatchUpdateAccount implements Database.Batchable<sObject>, Database.Stateful, Schedulable
-{	//A classe Batch deve implementar Database.Batchable<sObject>, Database.Stateful, Schedulable;
+{	
+    //A classe Batch deve implementar Database.Batchable<sObject>, Database.Stateful, Schedulable;
     //A classe deve obrigatoriamente implementar os métodos Start, execute e Finish. 
     //O objetivo deste Batch de exemplo é recuperar as contas que não possuem valor no campo Industry e no execute, preencher este campo e dar um update na conta.
     
