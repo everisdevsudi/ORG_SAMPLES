@@ -1,0 +1,73 @@
+.THIS .grafico{
+    background-color: rgb(248, 248, 248);
+    padding: 0;
+    border-radius: 5px;
+    width: 16px;
+    height: 55px;
+    border: none;
+}
+
+.THIS .dpGrid{
+    display:grid;
+}
+
+.THIS.align-center-left{
+    text-align : center;
+}
+
+.THIS .texto{
+    font-size: 12px;
+    color: black;
+    font-weight: bold;
+    margin-bottom: -20px;
+    margin-left: -16px;
+}
+.THIS .textoTitulo{
+    color: #222222;
+    font-size: 13pt;
+    margin-right: 22px;
+}
+.THIS.espacoGrafico{
+    width: 300px;
+}
+.THIS .botaoBarra{
+    margin-top: 42px;
+    color: #878787;
+}
+.THIS .textoRisco{
+    text-align: center;
+    margin-bottom: -10px;
+    font-size: 12px;
+    margin-right: 27px;
+}
+.THIS .textoRisco-1{
+    color: #00cc85;
+    margin-bottom: -6px;
+}
+.THIS .textoRisco-2{
+    color: #e73023;
+    margin-bottom: -6px;
+}
+
+@media (max-width:416px)  {
+    .THIS.txt-center{
+        text-align:center;
+    }
+    .THIS .dp-grid-none{
+        display:none;
+    }
+    .THIS .ml-15{
+        margin-left: 15px !important;
+    }
+}
+
+@media (min-width:769px)  {
+    .THIS .grafico{
+        background-color: rgb(248, 248, 248);
+        padding: 0;
+        border-radius: 5px;
+        width: 25px;
+        height: 200px;
+        border: none;
+    }
+}

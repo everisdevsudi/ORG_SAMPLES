@@ -1,0 +1,38 @@
+<aura:component implements="force:appHostable">
+    <aura:handler name="render" value="{!this}" action="{!c.doInit}"/>
+    
+    <aura:attribute name="carteiraMapa" type="Map" />
+    <aura:attribute name="page" type="String"/>
+    <aura:attribute name="porcentagem1" type="Decimal" default="50" />
+    <aura:attribute name="porcentagem2" type="Decimal" default="50" />
+    <aura:attribute name="porcentagem3" type="Decimal" default="50" />
+    <aura:attribute name="porcentagem4" type="Decimal" default="50" />
+    <aura:attribute name="porcentagem5" type="Decimal" default="50" />
+    
+    <div class="slds-box slds-grid slds-align_absolute-center espacoGrafico" style="background-color:white;">
+        <div class="slds-align_absolute-center textoRisco dpGrid">
+            <span class="textoRisco-1">-</span>
+            <span class="textoRisco-1">Risco</span>
+        </div>
+        
+        <canvas id="myCanvas1" class="slds-box grafico fontSize">The canvas element is not supported by your browser!</canvas>
+        <span class="slds-align_absolute-center texto slds-float_left">{!v.porcentagem1}%</span>
+        
+        <canvas id="myCanvas2" class="slds-box grafico fontSize">The canvas element is not supported by your browser!</canvas>
+        <span class="slds-align_absolute-center texto slds-float_left">{!v.porcentagem2}%</span>
+        
+        <canvas id="myCanvas3" class="slds-box grafico fontSize">The canvas element is not supported by your browser!</canvas>
+        <span class="slds-align_absolute-center texto slds-float_left">{!v.porcentagem3}%</span>
+        
+        <canvas id="myCanvas4" class="slds-box grafico fontSize">The canvas element is not supported by your browser!</canvas>
+        <span class="slds-align_absolute-center texto slds-float_left">{!v.porcentagem4}%</span>
+        
+        <canvas id="myCanvas5" class="slds-box grafico fontSize">The canvas element is not supported by your browser!</canvas>
+        <span class="slds-align_absolute-center texto slds-float_left">{!v.porcentagem5}%</span>
+        
+        <div class="slds-align_absolute-center textoRisco dpGrid">
+            <span class="textoRisco-2">+</span>
+            <span class="textoRisco-2">risco</span>
+        </div>
+    </div>
+</aura:component>
