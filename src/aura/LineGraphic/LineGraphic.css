@@ -1,0 +1,128 @@
+.THIS  {
+    border: 0 !important;
+    background-color: white !important;
+}
+.THIS .minimoDireita{
+    margin-left: 32px !important;    
+}
+.THIS .espacoMes{
+    position: absolute !important;
+    margin-top: 108px !important;
+    width: 345px !important;
+}
+.THIS .paddingCanvas{
+    padding-bottom: 19px !important;
+    border-bottom-color: #979797 !important;
+}
+.THIS .paddingData{
+    padding-bottom: 5px !important;
+    border-bottom-color: #979797 !important;
+}
+.THIS .espacoData{
+    display: inline-flex !important;
+}
+.THIS .mes{
+    border-color: black !important;
+    padding: 2px 7px !important;
+    background: white !important;
+    font-size: 16px;
+}
+.THIS .botaoAtivoR{
+    color:#31c667 !important;
+    border-color:#31c667 !important;
+    border-radius: 25px !important;
+    font-size: 14px !important;
+    line-height: 21px !important;
+    padding: 0 16px!important;
+}
+.THIS .botaoAtivoP{
+    color:#ffbd2d !important;
+    border-color:#ffbd2d !important;
+    border-radius: 25px !important;
+    font-size: 14px !important;
+    line-height: 21px !important;
+    padding: 0 16px!important;
+}
+.THIS .botaoDesativo{
+    color:gray !important;
+    border-color:gray !important;
+    border-radius: 25px !important;
+    font-size: 14px;
+    line-height: 21px !important;
+    padding: 0 16px!important;
+    
+}
+
+.THIS .slds-button:focus{
+    box-shadow:none !important;
+}
+@media only screen and (max-width:420px){
+    .THIS .ml29{
+        margin-left:29px;
+    }
+    .THIS .espacoMobile {
+        margin-top: 24px !important;
+        margin-left: 13px !important;
+    }
+    .THIS .paddingData{
+        margin-left: 36px !important;
+    }
+    .THIS .botaoDesativo {
+        margin-bottom: 15px !important;
+    }
+    .THIS .botaoAtivo{
+        margin-bottom: 15px !important; 
+    }
+    .THIS .minimoDireita{
+        margin-bottom: 32px !important; 
+        margin-left: 68px !important;
+    }
+    .THIS .espacoMes{
+        margin-top: 98px !important;
+        width: 263px !important;
+    }
+    
+}
+
+@media only screen and (max-width:378px){
+    .THIS .paddingData{
+        margin-left: 36px !important;
+    }
+    .THIS .botaoDesativo {
+        margin-bottom: 15px !important;
+    }
+    .THIS .botaoAtivo{
+        margin-bottom: 15px !important; 
+    }
+    .THIS .minimoDireita{
+        margin-bottom: 32px !important; 
+        margin-left: 48px !important;
+    }
+    .THIS .espacoMes{
+        margin-top: 98px !important;
+        width: 263px !important;
+    }
+    
+}
+
+@media only screen and (max-width:320px){
+    .THIS .espacoMobile {
+        margin-top: 24px !important;
+    }
+    .THIS .paddingData{
+        margin-left: 21px !important;
+    }
+    .THIS .botaoDesativo {
+        margin-bottom: 15px !important;
+    }
+    .THIS .botaoAtivo{
+        margin-bottom: 15px !important; 
+    }
+    .THIS .minimoDireita{
+        margin-bottom: 32px !important;    
+    }
+    .THIS .espacoMes{
+        margin-top: 98px !important;
+        width: 263px !important;
+    }
+}

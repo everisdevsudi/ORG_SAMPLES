@@ -1,0 +1,43 @@
+<aura:component implements="force:appHostable" controller="ProdutosGraficoRetaController">
+    
+    <aura:attribute name="rendimento" type="String" default="2.94"/>
+    <aura:attribute name="poupanca" type="String" default="0.50"/>
+    <aura:attribute name="cdi" type="String" default="4.30"/> 
+    <aura:attribute name="alturaCanvas" type="String"/>
+    <aura:attribute name="larguraCanvas" type="String"/>
+    <aura:attribute name="botaoBooleano1" type="Boolean" default="false" />
+    <aura:attribute name="botaoBooleano2" type="Boolean" default="false" />
+    <aura:attribute name="botaoBooleano3" type="Boolean" default="false" />
+    <aura:attribute name="itemInvestimento" type="Object"/>
+    <!--aura:attribute name="mesInicial" type="String"/>
+    <aura:attribute name="mesFinal" type="String"/-->
+    <aura:attribute name="perfil" type="String"/>
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <!--aura:handler event="aura:doneRendering" action="{!c.doneRendering}"/-->
+    <!--aura:attribute name="isDoneRendering" type="Boolean" default="false"/-->
+    
+    
+    <div class="slds-grid slds-box" style="background-color:white;"> 
+        <div class="slds-col slds-size_1-of-1 slds-grid slds-wrap">
+            
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1 slds-m-top_xx-small  slds-align_absolute-center">
+                
+                <lightning:button aura:id="elem1" value="{!v.rendimento}" 
+                                  class="{! v.botaoBooleano1 ? 'botaoAtivo botaoAtivoR slds-m-left_x-small' : 'botaoDesativo slds-m-left_x-small' }" label="Gráfico Rendimento" 
+                                  onclick="{!c.populaGrafico}"/>
+                <lightning:button aura:id="elem3" value="{!v.poupanca}" 
+                                  class="{! v.botaoBooleano3 ? 'botaoAtivo botaoAtivoP slds-m-left_x-small ml29' : 'botaoDesativo slds-m-left_x-small ml29' }" label="Grafico Poupança" 
+                                  onclick="{!c.populaGrafico}"/>
+            </div>
+            
+            
+            <div class="tamanhoCanvas slds-align_absolute-center slds-border_bottom paddingCanvas">
+                <canvas height="{!v.alturaCanvas}" width="{!v.larguraCanvas}" class="" id="myCanvas" aura:id="line-chart"></canvas>
+                <div class="espacoMes">
+                    <span class="slds-box mes slds-float_left">Inicio</span>
+                    <span class="slds-box mes slds-float_right">Atual</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>
