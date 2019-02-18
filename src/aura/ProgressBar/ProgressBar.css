@@ -1,0 +1,14 @@
+.THIS .slds-progress__item.slds-is-completed .slds-progress__marker{
+    background: blue;
+    border-color: blue;
+}
+
+.THIS .slds-progress__item.slds-is-active .slds-progress__marker{
+    background: blue;
+    border-color: blue;
+}
+
+.THIS .slds-progress-bar__value{
+    background: blue;
+    border-color: blue;
+}

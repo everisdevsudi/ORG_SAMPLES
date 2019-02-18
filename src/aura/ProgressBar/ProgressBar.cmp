@@ -1,0 +1,75 @@
+<aura:component implements="force:appHostable" >
+    
+    <div class="slds-page-header slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1 " role="banner">
+        
+                <div class="slds-size_1-of-1 slds-medium-size_1-of-1 slds-large-size_1-of-1" style="padding: 3rem 1rem 10px;">
+            
+            <div class="slds-progress">
+                
+                <!--MODIFICA A BOLINHA   -->
+                <ol class="slds-progress__list" >
+                    
+                    <li class="slds-progress__item slds-is-active">
+                        <button aura:id="botoes" data-index-number="0" class="slds-button slds-progress__marker slds-button_icon slds-progress__marker_icon" onclick="{!c.barraProgresso}" />    
+                    </li>
+                    
+                    <li class="slds-progress__item ">
+                        <button aura:id="botoes" data-index-number="10" class="slds-button slds-progress__marker  slds-progress__marker_icon" onclick="{!c.barraProgresso}" />    
+                    </li>
+                    
+                    <li class="slds-progress__item ">
+                        <button aura:id="botoes" data-index-number="20" class="slds-button slds-progress__marker slds-progress__marker_icon" onclick="{!c.barraProgresso}" /> 
+                    </li>  
+                    
+                    <li class="slds-progress__item ">
+                        <button aura:id="botoes" data-index-number="30" class="slds-button slds-progress__marker slds-progress__marker_icon" onclick="{!c.barraProgresso}" /> 
+                    </li>
+                    
+                    <li class="slds-progress__item ">
+                        <button aura:id="botoes" data-index-number="40" class="slds-button slds-progress__marker  slds-progress__marker_icon" onclick="{!c.barraProgresso}" />    
+                    </li>
+                    
+                    <li class="slds-progress__item ">
+                        <button aura:id="botoes" data-index-number="50" class="slds-button slds-progress__marker slds-progress__marker_icon" onclick="{!c.barraProgresso}" />
+                    </li>
+                    
+                    <li class="slds-progress__item ">
+                        <button aura:id="botoes" data-index-number="60" class="slds-button slds-progress__marker slds-progress__marker_icon" onclick="{!c.barraProgresso}" />
+                    </li>
+                    
+                    
+                    <li class="slds-progress__item ">
+                        <button aura:id="botoes" data-index-number="70" class="slds-button slds-progress__marker slds-progress__marker_icon" onclick="{!c.barraProgresso}" />
+                    </li>
+                    
+                    <li class="slds-progress__item ">
+                        <button aura:id="botoes" data-index-number="80" class="slds-button slds-progress__marker slds-progress__marker_icon" onclick="{!c.barraProgresso}" />
+                    </li>
+                    
+                    <li class="slds-progress__item ">
+                        <button aura:id="botoes" data-index-number="90" class="slds-button slds-progress__marker slds-progress__marker_icon" onclick="{!c.barraProgresso}" />
+                    </li>
+                    
+                    
+                    <li class="slds-progress__item ">
+                        <button aura:id="botoes" data-index-number="100" class="slds-button slds-progress__marker slds-progress__marker_icon" onclick="{!c.barraProgresso}" />
+                    </li>
+                    
+                </ol>            
+                
+                <!--MODIFICA LINHA  -->
+                <div class="slds-progress-bar slds-progress-bar_x-small " aria-valuemin="0" aria-valuemax="100" aria-valuenow="10" role="progressbar">
+                    <span aura:id="progresso" class="slds-progress-bar__value" style="width: 0%;"></span>
+                </div>
+               
+            </div>
+            
+        </div> 
+        
+        
+        
+        
+        
+    </div>
+    
+</aura:component>
