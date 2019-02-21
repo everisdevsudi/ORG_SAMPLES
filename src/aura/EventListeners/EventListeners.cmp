@@ -1,0 +1,10 @@
+<aura:component implements="force:appHostable" access="global">
+	
+    <aura:attribute name="enabledMouseOut" type="Boolean" default="false"/>
+    <aura:attribute name="enabledF5Press" type="Boolean" default="false"/>
+    
+    <lightning:button label="Add/Remove Mouseout" title="Add/Remove Mouseout" onclick="{! c.doMouseout }"/>
+    
+    <lightning:button label="Add/Remove F5 Press" title="Add/Remove F5 Press" onclick="{! c.doF5Press }"/>
+    
+</aura:component>
