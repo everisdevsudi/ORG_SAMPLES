@@ -1,0 +1,12 @@
+<aura:component implements="force:appHostable" access="global">
+    <aura:attribute name="page" type="String" default="0" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />
+    
+    <aura:if isTrue="{! v.page == '23' }">
+        <div class="slds-box" style="background:white;">
+            {!v.page}
+        </div>
+    </aura:if>
+    
+</aura:component>
